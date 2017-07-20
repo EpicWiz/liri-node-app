@@ -1,6 +1,3 @@
-//OMDb API key 1249ab7c
-// class OMDB 40e9cece
-
 const Twitter = require('twitter');
 const Spotify = require('node-spotify-api');
 const keys = require('./keys').client;
