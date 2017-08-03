@@ -4,6 +4,8 @@ const keys = require('./keys').client;
 const request = require('request');
 const fs = require('fs');
 
+// prefer `const` over `let` unless values are expected to change. 
+// See: https://medium.com/javascript-scene/javascript-es6-var-let-or-const-ba58b8dcde75
 let command = process.argv[2];
 let item = process.argv[3];
 
@@ -11,7 +13,7 @@ let twitter = () => {
   let params = { screen_name: '@SuperEpicWiz' };
   keys.get('statuses/user_timeline', params, function(error, tweets, response) {
     if (!error) {
-      for (let i = 0; i < tweets.length && i < 21; i++) {
+      for (let i = 0; i < tweets.length && i < 21; i++) { 
         console.log(tweets[i].created_at);
         console.log(tweets[i].text + '\n');
       }
